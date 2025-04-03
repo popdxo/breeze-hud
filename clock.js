@@ -6,25 +6,31 @@ import { breeze, mc } from '../breeze_defs';
 
 breeze.registerHud('Clock', 'Shows the time', {
   format: new BooleanSetting("12 hour format", "Switches the clock to be 24 hours", false),
-  position: new PositionSetting("Position","Change where the HUD is", 80, 20),
+  position: new PositionSetting("Position", "Change where the HUD is", 80, 40),
   
   update: function() {
-    if (this.format.getValue() = true) {
-      this.time = `${new Date().getHours()}:${new Date().getMinutes()}`
+
+    const currentTime = new Date();
+    const hours = currentTime.getHours();
+    const minutes = currentTime.getMinutes();
+    
+    const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
+
+    if (this.format.getValue() === false) {
+
+      this.time = `${hours}:${formattedMinutes}`;
     } else {
-      hour = function() {
-        var shitHour = new Date().getHours()
-        if (shitHour > 12) {
-          return shitHour - 12
-        } else {
-          return shitHour
-        }
-      }
-      this.time = `${hour}:${new Date().getMinutes()}`
+
+      const hour12 = hours > 12 ? hours - 12 : hours;
+      this.time = `${hour12}:${formattedMinutes}`;
     }
+
   },
 
+  background: function() {
+    UIRenderer.roundedRectangle(this.position.getX(), this.position.getY(), this.position.getWidth(), this.position.getHeight(), 5, new Color(255, 255, 255, 255)); // White background
+  },
   draw: function() {
-    UIRenderer.roundedRectangle(this.position.getX(), this.position.getY(), this.position.getWidth(), this.position.getHeight(), 5, new Color(255,255,255))
-  }
-})
+    UIRenderer.text(`${this.time}`, this.position.getX() + 5, this.position.getY() + 5, new Color(255, 255, 255, 255), 30);
+  },
+});
