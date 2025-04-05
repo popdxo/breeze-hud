@@ -13,8 +13,8 @@ const armor = {
   301: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/8/83/Leather_Boots_%28item%29_JE3_BE2.png",
   // chainmail
   302: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/0/0c/Chainmail_Helmet_(item)_JE1_BE1.png",
-  303: "https://minecraft.wiki/images/Chainmail_Chestplate_(item)_JE1_BE1.png",
-  304: "https://minecraft.wiki/images/Chainmail_Leggings_(item)_JE1_BE1.png",
+  303: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/2/22/Chainmail_Chestplate_(item)_JE1_BE1.png",
+  304: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/e/eb/Chainmail_Leggings_(item)_JE1_BE1.png",
   305: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/7/7a/Chainmail_Boots_(item)_JE1_BE1.png",
   // iron
   306: "https://static.wikia.nocookie.net/minecraft_gamepedia/images/3/3e/Iron_Helmet_(item)_JE2_BE2.png",
